@@ -7,7 +7,7 @@ Imports XFlowsheet.Implementation.DefaultImplementations
 Imports DWSIM
 Imports DWSIM.UnitOperations
 
-Public Class MyUnitOperation
+Public Class PackedBedPressureDrop
 
     Inherits UnitOperations.UnitOpBaseClass
 
@@ -58,7 +58,7 @@ Public Class MyUnitOperation
     'returns a new instance of this unit operation
     Public Function ReturnInstance(typename As String) As Object Implements Interfaces.IExternalUnitOperation.ReturnInstance
 
-        Return New MyUnitOperation()
+        Return New PackedBedPressureDrop()
 
     End Function
 
@@ -66,7 +66,7 @@ Public Class MyUnitOperation
     Public Overrides Function CloneXML() As Object
 
         Dim objdata = XMLSerializer.XMLSerializer.Serialize(Me)
-        Dim newhumidifier As New MyUnitOperation()
+        Dim newhumidifier As New PackedBedPressureDrop()
         newhumidifier.LoadData(objdata)
 
         Return newhumidifier
@@ -77,7 +77,7 @@ Public Class MyUnitOperation
     Public Overrides Function CloneJSON() As Object
 
         Dim jsonstring = Newtonsoft.Json.JsonConvert.SerializeObject(Me)
-        Dim newhumidifier = Newtonsoft.Json.JsonConvert.DeserializeObject(Of MyUnitOperation)(jsonstring)
+        Dim newhumidifier = Newtonsoft.Json.JsonConvert.DeserializeObject(Of PackedBedPressureDrop)(jsonstring)
 
         Return newhumidifier
 

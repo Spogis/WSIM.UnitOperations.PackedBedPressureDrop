@@ -7,7 +7,7 @@ Public Class Editor
 
     Inherits WeifenLuo.WinFormsUI.Docking.DockContent
 
-    Public SimObject As MyUnitOperation
+    Public SimObject As PackedBedPressureDrop
 
     Public Loaded As Boolean = False
 
